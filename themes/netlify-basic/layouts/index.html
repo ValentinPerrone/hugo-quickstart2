@@ -27,5 +27,16 @@
       </li>
     </ul>
   </div>
+  <div>
+  Visitors: <span id="counter">Loading...</span>
+  </div>
+
+  <script>
+  fetch("https://abc123.execute-api.us-east-1.amazonaws.com/counter")
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("counter").innerText = data.count;
+    });
+</script>
 </div>
 {{ end }}
